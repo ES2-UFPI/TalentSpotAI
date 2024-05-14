@@ -1,1 +1,1 @@
-"# TalentSpotAI" 
+# TalentSpotAI 
