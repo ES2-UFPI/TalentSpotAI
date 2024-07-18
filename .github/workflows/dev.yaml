@@ -14,8 +14,9 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
+        working-directory: ./frontend
         with:
-          node-version: '14'
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
@@ -24,8 +25,3 @@ jobs:
       - name: Build
         run: npm run build
         working-directory: ./frontend
-
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
