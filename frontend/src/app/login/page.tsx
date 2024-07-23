@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import { Tabs, Tab, TextField, Button, Typography, Link } from '@mui/material';
+import LoginCandidato from '@/components/Forms/LoginCandidato';
+import LoginGestorRecrutador from '@/components/Forms/LoginGestorRecrutador';
 
 const Page = () => {
     const [value, setValue] = useState<Number>(0);
@@ -75,58 +77,13 @@ const Page = () => {
               >
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
                   <Tab label="CANDIDATO" {...a11yProps(0)} />
-                  <Tab label="EMPRESA" {...a11yProps(1)} />
+                  <Tab label="GESTOR/RECRUTADOR" {...a11yProps(1)} />
                 </Tabs>
                 <CustomTabPanel value={value} index={0}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flex: 1,
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: '100%',
-                    }}
-                  >
-                    <form
-                      style={{
-                        display: 'flex',
-                        flex: 1,
-                        flexDirection: 'column',
-                        gap: '1rem',
-                        width: '100%',
-                        padding: '1rem'
-                      }}
-                    >
-                      <TextField
-                        label="Usuário"
-                        name="user"
-                        // value={form.nome}
-                        // onChange={(e) => handleChange(e)}
-                        // error={!!errors.nome}
-                        // helperText={errors.nome}
-                      />
-                      <TextField
-                        label="Senha"
-                        name="password"
-                        // value={form.nome}
-                        // onChange={(e) => handleChange(e)}
-                        // error={!!errors.nome}
-                        // helperText={errors.nome}
-                      />
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        // onClick={(e) => handleSubmit(e)}
-                      >
-                        Login
-                      </Button>
-                    </form>
-                    <Typography variant="caption" color={"#000"}>Não possui uma conta? <Link>Registre-se</Link> </Typography>
-                  </Box>
+                  <LoginCandidato/>
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={1}>
-                  <p>Em breve...</p>
+                  <LoginGestorRecrutador />
                 </CustomTabPanel>
               </Box>
             </Box>
