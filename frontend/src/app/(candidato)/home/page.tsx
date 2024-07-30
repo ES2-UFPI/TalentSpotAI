@@ -5,8 +5,8 @@ import { Box, Grid } from "@mui/material";
 
 export default function Home() {
   return (
-    <Grid container>
-      <Grid item xs={8}>
+    <Grid container mt={1}>
+      <Grid item xs={7.9}>
         <Box>
           <VagaCandidato
             title="Vaga Programador Delphi"
@@ -34,9 +34,10 @@ export default function Home() {
           />
         </Box>
       </Grid>
+      <Grid item xs={0.1}></Grid>
       <Grid item xs={4}>
         <Box>
-          <VagasCandidateiCard />
+          <VagasCandidateiCard/>
           <MiniAgendaCard />
         </Box>
       </Grid>
