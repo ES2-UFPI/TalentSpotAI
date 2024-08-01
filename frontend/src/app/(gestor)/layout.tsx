@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
     <ApolloProvider client={client}>
       <Box>
-        <Navbar isCandidate={true}/>
+        <Navbar />
       </Box>
       <Box>{children}</Box>
       </ApolloProvider>

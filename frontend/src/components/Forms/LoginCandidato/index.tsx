@@ -1,12 +1,33 @@
+'use client';
+import LOGIN_MUTATION  from "@/hooks/login";
+import { useMutation } from "@apollo/client";
 import { Box, Button, Link, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
 
 export default function LoginCandidato() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // const [login, { data, loading, error }] = useMutation(LOGIN_MUTATION);
+
   const router = useRouter();
 
   const handleSubmit = (e: any) => {
     router.push("/home");
   };
+
+  // const handleLogin = async (e: any) => {
+  //   e.preventDefault();
+  //   try {
+  //     const result = await login({ variables: { email, password } });
+  //     const token = result.data.tokenAuth.token;
+  //     localStorage.setItem('token', token);
+  //     // Redirecione ou atualize a UI conforme necessário
+  //     console.log('Login bem-sucedido', result.data.tokenAuth.user);
+  //   } catch (e) {
+  //     console.error('Erro no login', e);
+  //   }
+  // };
 
   return (    
       <Box
@@ -30,8 +51,8 @@ export default function LoginCandidato() {
           }}
         >
           <TextField
-            label="Usuário"
-            name="user"
+            label="E-mail"
+            name="email"
             // value={form.nome}
             // onChange={(e) => handleChange(e)}
             // error={!!errors.nome}
