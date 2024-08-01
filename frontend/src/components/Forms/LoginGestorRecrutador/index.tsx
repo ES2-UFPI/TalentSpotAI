@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 export default function LoginGestorRecrutador() {
   const router = useRouter();
   const handleSubmit = (e: any) => {
-    router.push("/home");
+    router.push("/homeGestor");
   };
   return (
     <Box
@@ -28,8 +28,8 @@ export default function LoginGestorRecrutador() {
         }}
       >
         <TextField
-          label="Usuário"
-          name="user"
+          label="E-mail"
+          name="email "
           // value={form.nome}
           // onChange={(e) => handleChange(e)}
           // error={!!errors.nome}
